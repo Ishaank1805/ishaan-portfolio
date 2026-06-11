@@ -26,7 +26,6 @@ export default function Home() {
       <main id="main">
         <Hero />
         <Interactions />
-        <div className="grain" aria-hidden />
         <Research />
         <hr className="rule" />
         <Experience />

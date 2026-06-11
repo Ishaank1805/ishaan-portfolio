@@ -2,8 +2,6 @@
 import { motion } from "motion/react";
 import EmbeddingField from "./EmbeddingField";
 import { ArrowRight } from "./icons";
-import ScrambleText from "./ScrambleText";
-import TokenStrip from "./TokenStrip";
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const fade = (delay: number) => ({
@@ -18,10 +16,10 @@ export default function Hero() {
       <EmbeddingField />
       <div className="wrap hero-inner">
         <motion.div className="hero-eyebrow eyebrow" {...fade(0)}>
-          <ScrambleText text="Undergraduate Researcher · IIIT Hyderabad" delay={150} />
+          Undergraduate Researcher · IIIT Hyderabad
         </motion.div>
         <motion.h1 {...fade(0.08)}>
-          I&apos;m interested in how machines<br />make sense of <ScrambleText as="em" text="language" delay={850} />.
+          I&apos;m interested in how machines<br />make sense of <em>language</em>.
         </motion.h1>
         <motion.p className="hero-sub" {...fade(0.18)}>
           I&apos;m <b>Ishaan Karan</b>, an undergraduate researcher at the Language Technologies Research
@@ -29,10 +27,9 @@ export default function Hero() {
           comes back to understanding how language models represent meaning.
         </motion.p>
         <motion.div className="hero-cta" {...fade(0.28)}>
-          <a className="btn btn--primary" data-magnetic href="#research">See the research <ArrowRight /></a>
-          <a className="btn btn--ghost" data-magnetic href="#contact">Get in touch</a>
+          <a className="btn btn--primary" href="#research">See the research <ArrowRight /></a>
+          <a className="btn btn--ghost" href="#contact">Get in touch</a>
         </motion.div>
-        <TokenStrip />
       </div>
       <div className="hero-meta">
         <div className="scroll-hint"><span className="line" /> SCROLL</div>

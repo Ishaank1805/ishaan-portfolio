@@ -61,7 +61,7 @@ em{font-style:italic}
 .section-head{margin-bottom:clamp(38px,5vw,64px);max-width:760px}
 .section-head h2{font-size:clamp(1.9rem,4.4vw,3.05rem);margin-top:18px;color:var(--text)}
 .section-head p{margin-top:18px;color:var(--text-2);font-size:1.06rem;max-width:60ch}
-.rule{height:1px;border:0;position:relative;z-index:2;background:repeating-linear-gradient(90deg,var(--line-2) 0 7px,transparent 7px 16px)}
+.rule{height:1px;background:var(--line);border:0;position:relative;z-index:2}
 
 .skip{position:absolute;left:14px;top:-60px;z-index:200;background:var(--surface-2);border:1px solid var(--line-2);padding:10px 16px;border-radius:var(--r-sm);transition:top .2s var(--ease)}
 .skip:focus{top:14px}
@@ -503,34 +503,3 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;b
 .resume-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
 .resume-btn svg{width:14px;height:14px}
 @media (max-width:640px){.resume-btn{display:none}}
-
-/* ===== creative layer: custom cursor + magnetic + film grain ===== */
-.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;will-change:transform}
-.cursor-dot{width:7px;height:7px;margin:-3.5px 0 0 -3.5px;background:#fff}
-.cursor-ring{width:32px;height:32px;margin:-16px 0 0 -16px;border:1px solid rgba(255,255,255,.55);transition:width .26s var(--ease),height .26s var(--ease),margin .26s var(--ease),background .26s,border-color .26s}
-body.has-cursor,body.has-cursor a,body.has-cursor button,body.has-cursor [data-magnetic]{cursor:none}
-body.cursor-active .cursor-ring{width:60px;height:60px;margin:-30px 0 0 -30px;background:rgba(255,255,255,.14);border-color:transparent}
-body.cursor-down .cursor-ring{width:22px;height:22px;margin:-11px 0 0 -11px}
-@media (pointer:coarse){.cursor-dot,.cursor-ring{display:none!important}}
-@media (prefers-reduced-motion:reduce){.cursor-dot,.cursor-ring{display:none!important}}
-
-[data-magnetic]{transition:transform .32s var(--ease);will-change:transform}
-
-.grain{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='180'%20height='180'%3E%3Cfilter%20id='n'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.8'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3C/filter%3E%3Crect%20width='100%25'%20height='100%25'%20filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* ===== NLP theme ===== */
-/* hero tokenizer strip with attention sweep */
-.tokstrip{display:flex;align-items:flex-start;gap:14px;margin-top:34px;flex-wrap:wrap}
-.tokstrip-tag{font-family:var(--font-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);padding-top:8px;white-space:nowrap}
-.toks{display:flex;flex-wrap:wrap;gap:5px;max-width:600px}
-.tok{display:inline-flex;flex-direction:column;align-items:center;gap:2px;font-family:var(--font-mono);font-size:.72rem;color:var(--text-2);background:var(--surface-2);border:1px solid var(--line-2);border-radius:6px;padding:5px 8px 3px;animation:tokAttn 5s ease-in-out infinite}
-.tok--sp{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft);animation:none}
-.tok-t{line-height:1.1}
-.tok-i{font-size:.5rem;color:var(--text-3)}
-.tok:nth-child(2){animation-delay:0s}.tok:nth-child(3){animation-delay:.3s}.tok:nth-child(4){animation-delay:.6s}.tok:nth-child(5){animation-delay:.9s}.tok:nth-child(6){animation-delay:1.2s}.tok:nth-child(7){animation-delay:1.5s}.tok:nth-child(8){animation-delay:1.8s}.tok:nth-child(9){animation-delay:2.1s}
-@keyframes tokAttn{0%,68%,100%{box-shadow:0 0 0 0 transparent;border-color:var(--line-2)}14%{box-shadow:0 0 14px -1px var(--accent-soft);border-color:var(--accent-line)}}
-@media (max-width:560px){.tokstrip-tag{display:none}}
-@media (prefers-reduced-motion:reduce){.tok{animation:none}}
-
-/* skills read as subword tokens */
-.skill::before{content:"▁";color:var(--text-3);opacity:.45;margin-right:1px}
