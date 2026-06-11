@@ -29,9 +29,9 @@ export const navItems = [
   { id: "contact", label: "Contact" },
 ];
 
-export type Domain = "interp" | "systems" | "nlp";
+export type Domain = "interp" | "systems" | "nlp" | "web";
 export const domainLabel: Record<Domain, string> = {
-  interp: "Interpretability", systems: "Systems", nlp: "NLP",
+  interp: "Interpretability", systems: "Systems", nlp: "NLP", web: "Web",
 };
 
 export const researchAreas: { num: string; title: string; body: string; tags: string[] }[] = [
@@ -110,10 +110,21 @@ export const experience: {
 
 export const projects: {
   idx: string; title: string; domain: Domain; period: string; tech: string[];
-  lede: string; bullets: string[]; repo: string;
+  lede: string; bullets: string[]; repo: string; live?: string;
 }[] = [
   {
-    idx: "P-01", title: "The Cross-Modal Safety Gap", domain: "interp", period: "Jan - Apr 2026",
+    idx: "P-01", title: "Trove", domain: "web", period: "Jan - Feb 2025",
+    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
+    lede: "A campus marketplace for IIIT Hyderabad to buy, sell, and rent things to one another, with real-time messaging and an order-aware AI assistant.",
+    bullets: [
+      "Full marketplace flow: sale and rental listings, search and category filters, cart and checkout, price offers, reviews, and favorites, with a one-time handoff code that buyer and seller exchange in person to complete an order.",
+      "Real-time messaging and notifications over Socket.io, IIIT-only sign-in, admin moderation of reported listings, and an order-aware support chatbot (Google Gemini) that answers questions about a user's own orders and rentals.",
+    ],
+    live: "https://trove-1.onrender.com",
+    repo: "https://github.com/Ishaank1805/trove",
+  },
+  {
+    idx: "P-02", title: "The Cross-Modal Safety Gap", domain: "interp", period: "Jan - Apr 2026",
     tech: ["Python", "PyTorch", "Sparse Autoencoders"],
     lede: "Why do aligned multimodal LLMs refuse harmful text but comply with the same request as an image or audio clip?",
     bullets: [
@@ -123,7 +134,17 @@ export const projects: {
     repo: "https://github.com/Ishaank1805/modality-safety-gap",
   },
   {
-    idx: "P-02", title: "Distributed Document Collaboration System", domain: "systems", period: "Nov 2025",
+    idx: "P-03", title: "LLM-as-a-Judge for English to Hindi MT", domain: "nlp", period: "2026",
+    tech: ["Python", "Gemini", "Groq", "OpenRouter"],
+    lede: "A calibrated meta-evaluation that treats an LLM judge itself as the object of study, measuring how well it scores English to Hindi machine translation against human annotators.",
+    bullets: [
+      "Built a 50-sentence diagnostic set targeting specific failure modes (ambiguity, honorifics, polysemy, terminology, cultural reference), translated by two open-weight LLMs and judged against three human annotators.",
+      "Ran one judge under direct, pairwise, and rubric protocols with prompt-paraphrase sweeps, position-swap and verbosity controls, and an adversarial set, then reported its agreement with humans and where it breaks down.",
+    ],
+    repo: "https://github.com/Ishaank1805/llm-as-judge-evaluation",
+  },
+  {
+    idx: "P-04", title: "Distributed Document Collaboration System", domain: "systems", period: "Nov 2025",
     tech: ["C", "TCP Sockets", "POSIX"],
     lede: "A multi-user document system with a central name server brokering high-throughput reads, writes, and streaming across storage servers.",
     bullets: [
@@ -133,7 +154,7 @@ export const projects: {
     repo: "https://github.com/Ishaank1805/distributed-file-system",
   },
   {
-    idx: "P-03", title: "Sparse Mixture-of-Experts for Extreme Summarization", domain: "nlp", period: "Nov 2025",
+    idx: "P-05", title: "Sparse Mixture-of-Experts for Extreme Summarization", domain: "nlp", period: "Nov 2025",
     tech: ["Python", "PyTorch", "LoRA"],
     lede: "A sparse Mixture-of-Experts Transformer built from scratch for extreme summarization on XSum.",
     bullets: [
@@ -143,7 +164,7 @@ export const projects: {
     repo: "https://github.com/Ishaank1805/moe-xsum",
   },
   {
-    idx: "P-04", title: "Custom C Shell", domain: "systems", period: "Aug 2025",
+    idx: "P-06", title: "Custom C Shell", domain: "systems", period: "Aug 2025",
     tech: ["C", "POSIX"],
     lede: "A POSIX-compliant Unix shell in C with a recursive-descent parser validating commands against a context-free grammar.",
     bullets: [

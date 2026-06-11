@@ -1,6 +1,6 @@
 import { projects, domainLabel } from "@/content/site";
 import Reveal from "./Reveal";
-import { Github } from "./icons";
+import { Github, ArrowUpRight } from "./icons";
 
 export default function Projects() {
   return (
@@ -28,9 +28,16 @@ export default function Projects() {
                 </div>
                 <div className="proj-detail">
                   <ul>{p.bullets.map((b, k) => <li key={k}>{b}</li>)}</ul>
-                  <a className="proj-link" href={p.repo} target="_blank" rel="noopener noreferrer">
-                    <Github /> View on GitHub
-                  </a>
+                  <div className="proj-links">
+                    {p.live && (
+                      <a className="proj-link proj-link--live" href={p.live} target="_blank" rel="noopener noreferrer">
+                        <ArrowUpRight /> Live demo
+                      </a>
+                    )}
+                    <a className="proj-link" href={p.repo} target="_blank" rel="noopener noreferrer">
+                      <Github /> View on GitHub
+                    </a>
+                  </div>
                 </div>
               </article>
             </Reveal>
