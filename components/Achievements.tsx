@@ -8,7 +8,6 @@ export default function Achievements() {
         <Reveal className="section-head">
           <span className="eyebrow">§ Achievements</span>
           <h2>Honours and awards.</h2>
-          <p>From a background in competition mathematics.</p>
         </Reveal>
         <div className="awards">
           {achievements.map((a, i) => (
