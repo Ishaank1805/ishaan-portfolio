@@ -200,7 +200,7 @@ export const timeline: {
 }[] = [
   { yr: "2025 - present", title: "Undergraduate Researcher", org: "Language Technologies Research Centre · IIIT Hyderabad", body: "Long-document understanding under Dr. Rajakrishnan Rajkumar: saliency, summarization, and span extraction.", key: true },
   { yr: "2025", title: "Software Engineer Intern", org: "Automaxis", body: "Decentralized Certificates of Origin on Algorand NFTs and IPFS, with Node.js APIs and MongoDB." },
-  { yr: "2023 - 2028", title: "BTech CS + MS Computational Linguistics", org: "IIIT Hyderabad · CGPA 7.50", body: "A five-year dual degree combining computer science with computational linguistics.", key: true },
+  { yr: "2023 - 2028", title: "BTech CS + MS Computational Linguistics", org: "IIIT Hyderabad", body: "A five-year dual degree combining computer science with computational linguistics.", key: true },
   { yr: "2021 - 2023", title: "A-Levels", org: "Whitmore High School, London", body: "Further Mathematics A*, Mathematics A*, Physics A, Chemistry A." },
 ];
 
