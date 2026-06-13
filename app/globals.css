@@ -509,3 +509,7 @@ input[type="range"]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;b
 .proj-links{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:22px}
 .proj-link--live{color:var(--accent);border-color:var(--accent-line);background:var(--accent-soft)}
 .proj-link--live:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* hero field: quieter on small screens; hide desktop shortcut hint on touch */
+@media (max-width:768px){.field.ready{opacity:.5}}
+@media (pointer:coarse){.cmd-btn kbd{display:none}}

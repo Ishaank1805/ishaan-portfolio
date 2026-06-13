@@ -35,7 +35,7 @@ export default function EmbeddingField() {
 
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const fine = window.matchMedia("(pointer: fine)").matches;
-    let W = 0, H = 0, raf: number | null = null, t = 0, visible = true;
+    let W = 0, H = 0, raf: number | null = null, t = 0, visible = true, small = false;
 
     const pts: Pt[] = [];
     CLUSTERS.forEach((cl, ci) => {
@@ -58,6 +58,7 @@ export default function EmbeddingField() {
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
       W = rect.width; H = rect.height;
+      small = W < 768;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
       canvas.width = W * dpr; canvas.height = H * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -105,7 +106,7 @@ export default function EmbeddingField() {
         ctx.beginPath(); ctx.arc(X, Y, p2.r * 5, 0, Math.PI * 2); ctx.fill();
         ctx.globalAlpha = 1; ctx.fillStyle = col;
         ctx.beginPath(); ctx.arc(X, Y, p2.r, 0, Math.PI * 2); ctx.fill();
-        if (p2.label) {
+        if (p2.label && !small) {
           ctx.globalAlpha = light ? 0.5 : 0.42;
           ctx.fillStyle = light ? "#3a3f6e" : "#aab3e8";
           ctx.font = "500 11px 'JetBrains Mono', monospace";
