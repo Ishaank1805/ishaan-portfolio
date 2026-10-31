@@ -9,9 +9,8 @@ export default function Research() {
         <Reveal className="section-head">
           <span className="eyebrow">§ Research</span>
           <h2>What I work on.</h2>
-          <p>My research is in natural language processing. Two areas take up most of my attention: salience in long-form narrative, which asks what makes a scene or passage matter, and conspiracy-marker extraction. Both are about finding interpretable, linguistically-grounded structure in messy text. A third, more applied strand looks at making dense retrieval cheaper.</p>
+          <p>My work spans natural language processing and interpretable machine learning: understanding salience in long-form narratives, extracting structured signals from social-media text, making dense retrieval more efficient, and probing safety representations in multimodal language models.</p>
         </Reveal>
-
         <div className="dirs">
           {researchAreas.map((d, i) => (
             <Reveal className="dir-cell" delay={i * 0.07} key={d.num}>
@@ -24,7 +23,6 @@ export default function Research() {
             </Reveal>
           ))}
         </div>
-
         <hr className="rule rule--soft" />
         <Publications />
       </div>
