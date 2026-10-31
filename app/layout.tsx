@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: "Ishaan Karan · NLP & Interpretability Researcher",
   description:
-    "Undergraduate researcher at IIIT Hyderabad (LTRC) working on NLP, mechanistic interpretability, and efficient retrieval. 2nd place at SemEval-2026; per-query Matryoshka retrieval under review.",
+    "Ishaan Karan is a student researcher at IIIT Hyderabad working on NLP, interpretable deep learning, long-document understanding, and information retrieval. EMNLP 2026 oral paper; second place at SemEval 2026 Task 10.",
   authors: [{ name: "Ishaan Karan" }],
   alternates: { canonical: "/" },
   openGraph: {
@@ -17,12 +17,12 @@ export const metadata: Metadata = {
     url,
     title: "Ishaan Karan · NLP & Interpretability Researcher",
     description:
-      "Undergraduate researcher at IIIT Hyderabad (LTRC). NLP, interpretability, retrieval. 2nd at SemEval-2026.",
+      "Student researcher at IIIT Hyderabad. EMNLP 2026 oral paper and second place at SemEval 2026 Task 10.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Ishaan Karan · NLP & Interpretability Researcher",
-    description: "Undergraduate researcher at IIIT Hyderabad (LTRC). NLP, interpretability, retrieval.",
+    description: "NLP, interpretable deep learning, long-document understanding, and information retrieval.",
   },
 };
 
@@ -38,10 +38,9 @@ const jsonLd = {
   "@type": "Person",
   name: "Ishaan Karan",
   url,
-  jobTitle: "Undergraduate Researcher, NLP & Interpretability",
+  jobTitle: "Student Researcher, NLP & Interpretability",
   affiliation: { "@type": "CollegeOrUniversity", name: "International Institute of Information Technology, Hyderabad" },
-  alumniOf: ["Whitmore High School, London", "The Shishukunj International School, Indore"],
-  knowsAbout: ["Natural Language Processing", "Mechanistic Interpretability", "Information Retrieval", "Machine Learning"],
+  knowsAbout: ["Natural Language Processing", "Interpretable Deep Learning", "Information Retrieval", "Long-Document Understanding", "Machine Learning"],
   sameAs: [
     "https://github.com/Ishaank1805",
     "https://www.linkedin.com/in/ishaan-karan-16432a2a7",
