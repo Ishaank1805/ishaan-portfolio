@@ -50,7 +50,7 @@ export const publications: {
     venue: "EMNLP 2026 Main Conference · Oral · CORE A*",
     status: "accepted",
     statusKind: "accepted",
-    summary: "Co-first-author work proposing the Linguistically-Grounded Saliency Model (LGSM), a dual-stream neural architecture with adaptive feature fusion and contextual sequence modeling. Improved salient-scene recall by 16.8 points and downstream summarization by +3.67 ROUGE-1.",
+    summary: "Co-first-author work introducing the Linguistically-Grounded Saliency Model (LGSM), which combines contextual representations with linguistic signals through adaptive feature fusion and sequence modeling. The analysis finds that salient scenes tend to use simpler syntax, stronger third-person narration, and abstract language about character motivation and conflict; scene-level information density alone offers little signal once length is controlled.",
     tags: ["scene saliency", "linguistic features", "long-form narrative"],
   },
   {
