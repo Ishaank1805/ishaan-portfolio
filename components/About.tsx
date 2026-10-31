@@ -11,11 +11,11 @@ export default function About() {
         </Reveal>
         <div className="about-grid">
           <Reveal className="about-body">
-            <p className="lead">Language is the thing I keep coming back to.</p>
-            <p>I find it genuinely surprising that something as messy and human as language can be modelled at all, and natural language processing is where I get to take that seriously. It is what most of my work is about, and what I want to keep doing.</p>
-            <p>I have always liked a hard problem for its own sake. I did my A-Levels in London before coming to <b>IIIT Hyderabad</b>, where I study computer science and computational linguistics and do research at the Language Technologies Research Centre under Dr. Rajakrishnan Rajkumar.</p>
-            <p>I would rather understand something properly than just get it working, so I am usually the one taking an idea apart to see how it actually fits together. I like asking a small question carefully more than a big one loosely.</p>
-            <p>Away from research, I was sports captain at <b>IIIT Hyderabad</b>, where I organized sport across the institute. Team sport has taught me about as much about doing good work as anything I have done at a desk.</p>
+            <p className="lead">I work on language, models, and the structures that connect them.</p>
+            <p>I am a computer science and computational linguistics student at <b>IIIT Hyderabad</b>, where I work with the Language Technologies Research Centre under Dr. Rajakrishnan Rajkumar.</p>
+            <p>My research spans interpretable deep learning for long-document understanding, scene saliency in movie screenplays, harmful online discourse, and information retrieval. I am especially interested in understanding what models learn, where their decisions come from, and how to make those systems more reliable.</p>
+            <p>My recent work includes an oral paper at <b>EMNLP 2026</b> on linguistically grounded scene saliency and a first-author paper at <b>SemEval 2026</b>, where our conspiracy-marker extraction system ranked second in Task 10.</p>
+            <p>Outside research, I served as Sports Captain at IIIT Hyderabad and currently work as a Teaching Assistant for Computational Linguistics 2.</p>
           </Reveal>
           <Reveal className="about-side" delay={0.1}>
             <div className="portrait">
