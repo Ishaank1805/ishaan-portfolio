@@ -1,12 +1,12 @@
 // ============================================================
-// Single source of truth. All REAL content from Ishaan's
-// resume + GitHub. Edit here; the UI is generated from this.
+// Single source of truth for the portfolio.
+// Content is aligned with Ishaan's November 2026 resume.
 // ============================================================
 
 export const profile = {
   name: "Ishaan Karan",
   role: "NLP & Interpretability Researcher",
-  email: "ishaan.karan@research.iiit.ac.in",
+  email: "Ishaan.karan@research.iiit.ac.in",
   phone: "+91 7815889330",
   github: "https://github.com/Ishaank1805",
   linkedin: "https://www.linkedin.com/in/ishaan-karan-16432a2a7",
@@ -38,20 +38,26 @@ export const researchAreas: { num: string; title: string; body: string; tags: st
   {
     num: "01",
     title: "Salience in long-form narrative",
-    body: "What makes one scene in a screenplay, or one passage in a long document, matter more than the rest? News has easy cues like lead bias; long-form fiction has none, so the signal is spread thinly across thousands of tokens. I study this with interpretable, linguistically-grounded models, asking which cues actually carry the signal (pacing, character focus, discourse structure) rather than trusting opaque embeddings to find them on their own.",
-    tags: ["saliency", "summarization", "discourse", "long documents"],
+    body: "I study what makes particular scenes in a screenplay salient and how those signals can support downstream summarization. My work combines contextual representations with linguistically grounded signals, with an emphasis on interpretable models of narrative structure.",
+    tags: ["scene saliency", "long-form narrative", "interpretability", "summarization"],
   },
   {
     num: "02",
-    title: "Conspiracy markers and span extraction",
-    body: "Pulling structured spans out of text and modelling how their labels depend on each other. For conspiracy-marker extraction I built attention over the markers themselves and a regularizer that keeps the model from collapsing onto one easy prediction. The broader interest is span-level structure: where a phenomenon starts and stops in a sentence, and why.",
-    tags: ["span extraction", "attention", "social media text"],
+    title: "Harmful discourse and span extraction",
+    body: "I work on extracting structured spans from social-media text and modelling dependencies between labels. This includes conspiracy-marker extraction, where Cross-Marker Attention and a regularization objective help capture inter-label relationships without prediction collapse.",
+    tags: ["span extraction", "social media", "attention", "robust learning"],
   },
   {
     num: "03",
-    title: "Efficient dense retrieval",
-    body: "Most embeddings spend the same number of dimensions on every query, which is wasteful. I work on retrieval that routes each query to the dimensions it actually needs, holding accuracy while cutting cost. This is the more applied side of what I do.",
-    tags: ["dense retrieval", "embeddings", "efficiency"],
+    title: "Efficient information retrieval",
+    body: "I explore query-adaptive dense retrieval: selecting the embedding dimensions that matter for each query rather than applying a fixed compression rule to every query. The goal is to retain retrieval quality while using substantially fewer dimensions.",
+    tags: ["dense retrieval", "embeddings", "FAISS", "efficiency"],
+  },
+  {
+    num: "04",
+    title: "Mechanistic interpretability of multimodal models",
+    body: "I use mechanistic interpretability tools to investigate how safety-related representations differ across text, image, and audio inputs in multimodal language models, and what those differences imply for inference-time defenses.",
+    tags: ["mechanistic interpretability", "multimodal LLMs", "sparse autoencoders"],
   },
 ];
 
@@ -60,32 +66,22 @@ export const publications: {
   summary: string; tags: string[]; metric?: { value: string; label: string };
 }[] = [
   {
-    title: "Saliency in long-form narrative",
-    venue: "Under review · ARR",
-    status: "under review",
-    statusKind: "review",
-    summary:
-      "An interpretability project on what makes individual scenes matter in long-form narrative, pairing neural representations with explicit linguistic features. Title and detailed results are withheld while the paper is under anonymous review.",
-    tags: ["saliency", "long-form narrative", "interpretability"],
+    title: "Linguistically-Grounded Scene Saliency in Movie Screenplays",
+    venue: "EMNLP 2026 Main Conference · Oral · CORE A*",
+    status: "accepted",
+    statusKind: "accepted",
+    summary: "Co-first-author work proposing the Linguistically-Grounded Saliency Model (LGSM), a dual-stream neural architecture with adaptive feature fusion and contextual sequence modeling. Improved salient-scene recall by 16.8 points and downstream summarization by +3.67 ROUGE-1.",
+    tags: ["scene saliency", "linguistic features", "long-form narrative"],
+    metric: { value: "+16.8", label: "points in salient-scene recall" },
   },
   {
     title: "Span-Consistency Network for Conspiracy Marker Extraction",
-    venue: "SemEval-2026 Task 10 · @ ACL 2026",
+    venue: "SemEval 2026 · @ ACL 2026 · Task 10",
     status: "2nd place",
     statusKind: "accepted",
-    summary:
-      "A span-extraction architecture with Cross-Marker Attention to model inter-label dependencies, plus a custom regularization loss that prevents prediction collapse.",
-    tags: ["span extraction", "attention", "regularization"],
-    metric: { value: "2nd", label: "of all teams · Task 10" },
-  },
-  {
-    title: "Efficient dense retrieval",
-    venue: "Under review · ARR",
-    status: "under review",
-    statusKind: "review",
-    summary:
-      "A method for dense retrieval that adapts how many embedding dimensions each query uses, cutting cost while holding accuracy. Title and detailed results are withheld while the paper is under anonymous review.",
-    tags: ["dense retrieval", "embeddings"],
+    summary: "First-author work introducing a span extraction architecture with Cross-Marker Attention to model inter-label dependencies and a custom regularization loss to prevent prediction collapse. The system ranked second in SemEval 2026 Task 10.",
+    tags: ["conspiracy markers", "span extraction", "Cross-Marker Attention"],
+    metric: { value: "2nd", label: "place · SemEval Task 10" },
   },
 ];
 
@@ -96,15 +92,15 @@ export const experience: {
     role: "Undergraduate Researcher",
     org: "Language Technologies Research Centre, IIIT Hyderabad",
     period: "May 2025 - Present",
-    body: "Building deep-learning models for long-document understanding under Dr. Rajakrishnan Rajkumar: saliency detection, summarization, and span extraction across narratives and social-media text.",
-    tags: ["PyTorch", "NLP", "research"],
+    body: "Research interpretable deep learning for long-document understanding, social media analysis, information retrieval, and large language models, advised by Dr. Rajakrishnan Rajkumar. Published an oral paper at EMNLP 2026 Main Conference on scene saliency in movie screenplays and a SemEval @ ACL 2026 paper whose conspiracy-marker extraction system ranked second in Task 10.",
+    tags: ["PyTorch", "NLP", "interpretability", "information retrieval", "LLMs"],
   },
   {
     role: "Software Engineer Intern",
     org: "Automaxis",
     period: "Jan 2025 - Apr 2025",
-    body: "Built a decentralized system for Certificates of Origin using Algorand NFTs, Pinata IPFS, Node.js APIs, and MongoDB, with real-time tracking and role-based workflows.",
-    tags: ["Node.js", "Algorand", "MongoDB", "IPFS"],
+    body: "Built a blockchain-backed verification platform for Certificates of Origin using Algorand NFTs and IPFS, enabling provenance validation in under 2 seconds and reducing manual verification effort by approximately 90%. Developed a real-time document lifecycle tracking system with WebSockets, role-based access control, and audit trails, tracking 100+ certificates across four stakeholder groups.",
+    tags: ["Algorand", "IPFS", "WebSockets", "access control"],
   },
 ];
 
@@ -113,65 +109,44 @@ export const projects: {
   lede: string; bullets: string[]; repo: string; live?: string;
 }[] = [
   {
-    idx: "P-01", title: "Trove", domain: "web", period: "Jan - Feb 2025",
-    tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
-    lede: "A campus marketplace for IIIT Hyderabad to buy, sell, and rent things to one another, with real-time messaging and an order-aware AI assistant.",
+    idx: "P-01", title: "Bloom-Aligned Query Dimension Routing", domain: "nlp", period: "Jan - May 2026",
+    tech: ["PyTorch", "FAISS", "Dense Retrieval"],
+    lede: "A query-adaptive dense-retrieval method that selects a task-relevant subset of embedding dimensions for each query.",
     bullets: [
-      "Full marketplace flow: sale and rental listings, search and category filters, cart and checkout, price offers, reviews, and favorites, with a one-time handoff code that buyer and seller exchange in person to complete an order.",
-      "Real-time messaging and notifications over Socket.io, IIIT-only sign-in, admin moderation of reported listings, and an order-aware support chatbot (Google Gemini) that answers questions about a user's own orders and rentals.",
+      "Designed a learned query-conditioned mask head trained end-to-end with a Gumbel straight-through estimator across five backbones.",
+      "Raised Recall@10 by 3.1–6.3 points over strong compression baselines while using only 25–43% of embedding dimensions.",
     ],
-    live: "https://trove-1.onrender.com",
-    repo: "https://github.com/Ishaank1805/trove",
+    repo: "https://github.com/Ishaank1805",
   },
   {
     idx: "P-02", title: "The Cross-Modal Safety Gap", domain: "interp", period: "Jan - Apr 2026",
-    tech: ["Python", "PyTorch", "Sparse Autoencoders"],
-    lede: "Why do aligned multimodal LLMs refuse harmful text but comply with the same request as an image or audio clip?",
+    tech: ["PyTorch", "Mechanistic Interpretability", "Sparse Autoencoders"],
+    lede: "Investigating why aligned multimodal LLMs can refuse harmful text yet comply with equivalent image or audio inputs.",
     bullets: [
-      "Trained sparse autoencoders on two 7B models to isolate ~50 safety features (0.3% of all features) that fire on harmful text but never on non-text inputs.",
-      "Localized the safety circuit to layers 12-13 via three independent methods, and showed text and non-text representations are near-orthogonal, bounding what inference-time defenses can achieve.",
+      "Trained sparse autoencoders on two 7B models to isolate approximately 50 text-only safety features (0.3%).",
+      "Localized the safety circuit to layers 12–13 and showed that text and non-text representations are near-orthogonal, bounding potential inference-time defenses.",
     ],
-    repo: "https://github.com/Ishaank1805/modality-safety-gap",
+    repo: "https://github.com/Ishaank1805",
   },
   {
-    idx: "P-03", title: "LLM-as-a-Judge for English to Hindi MT", domain: "nlp", period: "2026",
-    tech: ["Python", "Gemini", "Groq", "OpenRouter"],
-    lede: "A calibrated meta-evaluation that treats an LLM judge itself as the object of study, measuring how well it scores English to Hindi machine translation against human annotators.",
+    idx: "P-03", title: "Mixture-of-Experts Transformer for Summarization", domain: "nlp", period: "Nov 2025",
+    tech: ["PyTorch", "Hugging Face", "LoRA"],
+    lede: "An MoE Transformer implemented from scratch for extreme summarization on the XSum benchmark.",
     bullets: [
-      "Built a 50-sentence diagnostic set targeting specific failure modes (ambiguity, honorifics, polysemy, terminology, cultural reference), translated by two open-weight LLMs and judged against three human annotators.",
-      "Ran one judge under direct, pairwise, and rubric protocols with prompt-paraphrase sweeps, position-swap and verbosity controls, and an adversarial set, then reported its agreement with humans and where it breaks down.",
+      "Implemented top-k token routing and expert load balancing, reaching 32.2 ROUGE-1 and improving over hash routing by 2.8 points.",
+      "Added from-scratch Grouped-Query Attention and shared-base LoRA experts, reaching near-parity quality with approximately 30–40% fewer expert parameters.",
     ],
-    repo: "https://github.com/Ishaank1805/llm-as-judge-evaluation",
+    repo: "https://github.com/Ishaank1805",
   },
   {
-    idx: "P-04", title: "Distributed Document Collaboration System", domain: "systems", period: "Nov 2025",
-    tech: ["C", "TCP Sockets", "POSIX"],
-    lede: "A multi-user document system with a central name server brokering high-throughput reads, writes, and streaming across storage servers.",
+    idx: "P-04", title: "Backdoor Attacks & Model Repair", domain: "interp", period: "Apr 2026",
+    tech: ["PyTorch", "scikit-learn", "FastICA", "ResNet-18"],
+    lede: "A data-poisoning and model-repair pipeline studying activation clustering as a defense against backdoor attacks.",
     bullets: [
-      "Central name server coordinates multiple storage servers and concurrent clients, routing requests and brokering direct client-server connections for throughput.",
-      "Sentence-level locking for concurrent editing, owner-controlled access, durable persistence of files and metadata, and fast lookup via indexed search with LRU caching.",
+      "Built a CIFAR-10 poisoning pipeline with ResNet-18 where a BadNets-style backdoor reached 98.5% attack success rate.",
+      "Applied Activation Clustering (FastICA + k-means), reducing attack success to 1.2% while preserving clean accuracy.",
     ],
-    repo: "https://github.com/Ishaank1805/distributed-file-system",
-  },
-  {
-    idx: "P-05", title: "Sparse Mixture-of-Experts for Extreme Summarization", domain: "nlp", period: "Nov 2025",
-    tech: ["Python", "PyTorch", "LoRA"],
-    lede: "A sparse Mixture-of-Experts Transformer built from scratch for extreme summarization on XSum.",
-    bullets: [
-      "Grouped-Query Attention, two routing strategies (hash and top-k token-choice), and a load balancer with an auxiliary balancing loss.",
-      "LoRA-based experts implemented from scratch; benchmarked against BART, fine-tuned T5, and an instruction-tuned LLaMA on ROUGE, BERTScore, and factuality.",
-    ],
-    repo: "https://github.com/Ishaank1805/moe-xsum",
-  },
-  {
-    idx: "P-06", title: "Custom C Shell", domain: "systems", period: "Aug 2025",
-    tech: ["C", "POSIX"],
-    lede: "A POSIX-compliant Unix shell in C with a recursive-descent parser validating commands against a context-free grammar.",
-    bullets: [
-      "Built-ins for navigation, listing, and cross-session command history; modular multi-file architecture.",
-      "External execution, I/O redirection, multi-stage pipelines, background jobs, and signal-based process management with full job control.",
-    ],
-    repo: "https://github.com/Ishaank1805/custom-unix-shell",
+    repo: "https://github.com/Ishaank1805/activation-clustering-for-backdoor-detection",
   },
 ];
 
@@ -185,78 +160,71 @@ export const skillFilters: { f: SkillCat | "all"; label: string }[] = [
   { f: "sys", label: "Systems & Web" },
 ];
 export const skills: { name: string; cat: SkillCat }[] = [
-  { name: "Python", cat: "lang" }, { name: "C / C++", cat: "lang" }, { name: "JavaScript", cat: "lang" },
-  { name: "SQL", cat: "lang" }, { name: "Bash", cat: "lang" },
-  { name: "PyTorch", cat: "ml" }, { name: "Hugging Face", cat: "ml" }, { name: "PEFT / LoRA", cat: "ml" },
-  { name: "CUDA", cat: "ml" }, { name: "scikit-learn", cat: "ml" }, { name: "Weights & Biases", cat: "ml" }, { name: "SHAP", cat: "ml" },
-  { name: "spaCy", cat: "nlp" }, { name: "NLTK", cat: "nlp" }, { name: "Transformers", cat: "nlp" },
-  { name: "NumPy", cat: "data" }, { name: "Pandas", cat: "data" }, { name: "Matplotlib", cat: "data" },
-  { name: "React.js", cat: "sys" }, { name: "Node.js", cat: "sys" }, { name: "MongoDB", cat: "sys" },
-  { name: "Git", cat: "sys" }, { name: "Linux", cat: "sys" }, { name: "POSIX", cat: "sys" }, { name: "TCP Sockets", cat: "sys" },
+  { name: "Python", cat: "lang" }, { name: "C / C++", cat: "lang" }, { name: "Go", cat: "lang" },
+  { name: "JavaScript", cat: "lang" }, { name: "SQL", cat: "lang" }, { name: "Bash", cat: "lang" },
+  { name: "PyTorch", cat: "ml" }, { name: "Hugging Face Transformers", cat: "ml" }, { name: "PEFT / LoRA", cat: "ml" },
+  { name: "CUDA", cat: "ml" }, { name: "scikit-learn", cat: "ml" }, { name: "SHAP", cat: "ml" },
+  { name: "Weights & Biases", cat: "ml" }, { name: "Jupyter", cat: "ml" },
+  { name: "spaCy", cat: "nlp" }, { name: "NLTK", cat: "nlp" }, { name: "Gensim", cat: "nlp" },
+  { name: "NumPy", cat: "data" }, { name: "Pandas", cat: "data" }, { name: "SciPy", cat: "data" }, { name: "Matplotlib", cat: "data" },
+  { name: "React.js", cat: "sys" }, { name: "Node.js", cat: "sys" }, { name: "Express.js", cat: "sys" },
+  { name: "HTML5", cat: "sys" }, { name: "CSS3", cat: "sys" }, { name: "MongoDB", cat: "sys" },
+  { name: "Socket.IO", cat: "sys" }, { name: "REST APIs", cat: "sys" }, { name: "gRPC", cat: "sys" },
+  { name: "Protocol Buffers", cat: "sys" }, { name: "Git", cat: "sys" }, { name: "Linux", cat: "sys" },
+  { name: "Docker", cat: "sys" }, { name: "IPFS", cat: "sys" }, { name: "Algorand", cat: "sys" },
+  { name: "Vercel", cat: "sys" }, { name: "Render", cat: "sys" }, { name: "Gemini API", cat: "sys" },
 ];
 
 export const timeline: {
   yr: string; title: string; org: string; body: string; key?: boolean;
 }[] = [
-  { yr: "2025 - present", title: "Undergraduate Researcher", org: "Language Technologies Research Centre · IIIT Hyderabad", body: "Long-document understanding under Dr. Rajakrishnan Rajkumar: saliency, summarization, and span extraction.", key: true },
-  { yr: "2025", title: "Software Engineer Intern", org: "Automaxis", body: "Decentralized Certificates of Origin on Algorand NFTs and IPFS, with Node.js APIs and MongoDB." },
-  { yr: "2023 - 2028", title: "BTech CS + MS Computational Linguistics", org: "IIIT Hyderabad", body: "A five-year dual degree combining computer science with computational linguistics.", key: true },
-  { yr: "2021 - 2023", title: "A-Levels", org: "Whitmore High School, London", body: "Further Mathematics A*, Mathematics A*, Physics A, Chemistry A." },
+  { yr: "May 2025 - present", title: "Undergraduate Researcher", org: "Language Technologies Research Centre · IIIT Hyderabad", body: "Research on interpretable deep learning for long-document understanding, social media analysis, information retrieval, and large language models.", key: true },
+  { yr: "Jan - Apr 2025", title: "Software Engineer Intern", org: "Automaxis", body: "Built blockchain-backed certificate verification and real-time document lifecycle tracking systems." },
+  { yr: "Aug 2023 - May 2028", title: "BTech Computer Science + MS Computational Linguistics", org: "International Institute of Information Technology, Hyderabad", body: "Dual-degree programme. Dean’s List I (Monsoon 2025, top 5%) and Dean’s Research List (Spring 2026).", key: true },
 ];
 
 export const aboutFacts = [
   { lab: "Based", val: "Hyderabad, India" },
-  { lab: "Lab", val: "LTRC, IIIT-H" },
+  { lab: "Lab", val: "LTRC, IIIT Hyderabad" },
   { lab: "Advisor", val: "Dr. Rajakrishnan Rajkumar" },
-  { lab: "Focus", val: "Natural Language Processing" },
+  { lab: "Focus", val: "NLP & interpretability" },
 ];
 
 export const courseGroups: { area: string; items: string[] }[] = [
   {
     area: "NLP & Computational Linguistics",
-    items: ["Advanced NLP", "Introduction to NLP", "Evaluation Methods for NLP", "Applications of Language Models", "NLP for Healthcare", "Computational Linguistics I", "Computational Semantics & Discourse Parsing", "Computational Psycholinguistics", "Language Typology & Universals", "Language & Society", "Introduction to Linguistics I & II"],
+    items: ["Advanced NLP", "Applications of Language Models", "Computational Linguistics 2"],
   },
   {
     area: "Machine Learning & AI",
-    items: ["Machine, Data and Learning", "Responsible & Safe AI Systems", "Digital Signal Analysis"],
+    items: ["Responsible and Safe AI Systems"],
   },
   {
     area: "Computer Science & Systems",
-    items: ["Data Structures & Algorithms", "Design & Analysis of Algorithms", "Automata Theory", "Operating Systems & Networks", "Design & Analysis of Software Systems", "Introduction to Software Systems", "Computer Systems Organization", "Computer Programming"],
-  },
-  {
-    area: "Mathematics",
-    items: ["Discrete Structures", "Linear Algebra", "Probability & Statistics"],
-  },
-  {
-    area: "Research & Independent Study",
-    items: ["CL Honours Project I & II", "UG Independent Study", "CL Summer Project"],
+    items: ["Data Structures & Algorithms", "Design and Analysis of Algorithms", "Operating Systems & Networks", "Design & Analysis of Software Systems"],
   },
 ];
 
 export const achievements: { title: string; detail: string; desc: string }[] = [
-  { title: "British Mathematical Olympiad (BMO1)", detail: "Merit Award", desc: "A national round of the UK Mathematics Trust olympiad series, sat after the Senior Mathematical Challenge: six proof-based problems over three and a half hours." },
-  { title: "NTSE Stage 1", detail: "State Rank 16", desc: "India's national scholarship examination, run by NCERT to identify academically talented students nationwide. Stage 1 is the state-level round." },
-  { title: "IOQM", detail: "Top 300 in state", desc: "The first, nationwide stage of India's Mathematical Olympiad programme, the qualifier on the path to the Indian National Mathematical Olympiad (INMO)." },
+  { title: "Dean’s List I", detail: "Top 5% · Monsoon 2025", desc: "Academic distinction awarded at IIIT Hyderabad." },
+  { title: "Dean’s Research List", detail: "Spring 2026", desc: "Research distinction awarded at IIIT Hyderabad." },
+  { title: "Amazon Machine Learning Summer School 2026", detail: "Selected among 3,000", desc: "Selected from more than 130,000 applicants." },
+  { title: "British Mathematical Olympiad (BMO1)", detail: "Merit Award", desc: "Recognition in the British Mathematical Olympiad." },
+  { title: "NTSE Stage 1", detail: "State Rank 16", desc: "State-level rank in the National Talent Search Examination." },
+  { title: "IOQM", detail: "Top 300 in state", desc: "Among the top 300 students in the state in the Indian Olympiad Qualifier in Mathematics." },
 ];
 
 export const extracurricular: { role: string; org: string; period: string; body: string }[] = [
   {
+    role: "Teaching Assistant",
+    org: "Computational Linguistics 2 · IIIT Hyderabad",
+    period: "Aug 2026 - Present",
+    body: "Led tutorials and graded assignments. Held office hours to help students work through course concepts.",
+  },
+  {
     role: "Sports Captain",
     org: "IIIT Hyderabad",
     period: "Aug 2025 - May 2026",
-    body: "Organized sports across the institute, from inter-batch and inter-house competitions to Night Cricket and the annual IIIT Run, and scheduled and managed intercollege tournaments end to end, handling venues, fixtures, and live coordination.",
-  },
-  {
-    role: "Volunteer",
-    org: "Mind",
-    period: "Nov 2021 - Jul 2022",
-    body: "Volunteered at a charity shop for Mind, the UK mental health charity, helping run the shop day to day: sorting and pricing donated stock, serving customers, and keeping the floor and displays in order. The shop's takings support Mind's mental health services.",
-  },
-  {
-    role: "Volunteer",
-    org: "EasyA",
-    period: "Jun 2022 - Aug 2022",
-    body: "Volunteered as a mathematics tutor with EasyA, helping children from underprivileged backgrounds work through core maths. Sessions centred on the fundamentals and on building confidence with the subject, adapting to where each student was struggling.",
+    body: "Organized institute-wide sporting events, including the IIIT Run, Night Cricket, and intercollegiate tournaments, serving 2,000+ participants and 20+ college teams through end-to-end event management.",
   },
 ];
