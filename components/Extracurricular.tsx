@@ -6,12 +6,12 @@ export default function Extracurricular() {
     <section className="section section--tight" id="extracurricular" tabIndex={-1}>
       <div className="wrap">
         <Reveal className="section-head">
-          <span className="eyebrow">§ Extracurricular</span>
-          <h2>Off the screen.</h2>
+          <span className="eyebrow">§ Teaching &amp; leadership</span>
+          <h2>Beyond research.</h2>
         </Reveal>
         <div className="exp-list">
-          {extracurricular.map((e) => (
-            <Reveal key={e.role}>
+          {extracurricular.map((e, i) => (
+            <Reveal key={e.role + e.org} delay={i * 0.06}>
               <article className="exp">
                 <div className="exp-period">{e.period}</div>
                 <div className="exp-body">
