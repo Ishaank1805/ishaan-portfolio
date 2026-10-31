@@ -16,15 +16,16 @@ export default function Hero() {
       <EmbeddingField />
       <div className="wrap hero-inner">
         <motion.div className="hero-eyebrow eyebrow" {...fade(0)}>
-          Undergraduate Researcher · IIIT Hyderabad
+          Undergraduate Researcher · LTRC, IIIT Hyderabad
         </motion.div>
         <motion.h1 {...fade(0.08)}>
           I&apos;m interested in how machines<br />make sense of <em>language</em>.
         </motion.h1>
         <motion.p className="hero-sub" {...fade(0.18)}>
-          I&apos;m <b>Ishaan Karan</b>, an undergraduate researcher at the Language Technologies Research
-          Centre, <b>IIIT Hyderabad</b>. My focus is natural language processing, and most of what I do
-          comes back to understanding how language models represent meaning.
+          I&apos;m <b>Ishaan Karan</b>, a computer science and computational linguistics student at
+          <b> IIIT Hyderabad</b>. I work on NLP, interpretable deep learning, long-document
+          understanding, and information retrieval at the Language Technologies Research Centre.
+          My research includes an oral paper at EMNLP 2026 and a second-place system at SemEval 2026.
         </motion.p>
         <motion.div className="hero-cta" {...fade(0.28)}>
           <a className="btn btn--primary" href="#research">See the research <ArrowRight /></a>
