@@ -8,7 +8,7 @@ export default function Coursework() {
         <Reveal className="section-head">
           <span className="eyebrow">§ Coursework</span>
           <h2>Courses I&apos;ve taken.</h2>
-          <p>Selected coursework from my BTech and MS at IIIT Hyderabad, grouped by area.</p>
+          <p>Selected coursework listed on my current resume.</p>
         </Reveal>
         <div className="courses">
           {courseGroups.map((g, i) => (
