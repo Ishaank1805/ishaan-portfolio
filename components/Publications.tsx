@@ -8,9 +8,8 @@ export default function Publications() {
       <Reveal className="subhead">
         <span className="eyebrow">Publications</span>
         <h3>Papers.</h3>
-        <p>Peer-reviewed and under-review research.</p>
+        <p>Peer-reviewed conference research.</p>
       </Reveal>
-
       <div className="pubs-list">
         {publications.map((p, i) => (
           <Reveal key={p.title} delay={i * 0.08}>
@@ -23,6 +22,7 @@ export default function Publications() {
                 </div>
                 <h3 className="pub-title">{p.title}</h3>
                 <p className="pub-summary">{p.summary}</p>
+                {p.metric && <div className="pub-metric"><strong>{p.metric.value}</strong><span>{p.metric.label}</span></div>}
                 <div className="pub-tags">{p.tags.map((t) => <span key={t}>{t}</span>)}</div>
               </div>
             </article>
