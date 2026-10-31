@@ -60,7 +60,6 @@ export const publications: {
     statusKind: "accepted",
     summary: "First-author work introducing a span extraction architecture with Cross-Marker Attention to model inter-label dependencies and a custom regularization loss to prevent prediction collapse. The system ranked second in SemEval 2026 Task 10.",
     tags: ["conspiracy markers", "span extraction", "Cross-Marker Attention"],
-    metric: { value: "2nd", label: "place · SemEval Task 10" },
   },
 ];
 
